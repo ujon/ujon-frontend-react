@@ -2,22 +2,28 @@ import React, { Fragment, useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 // Action
-import { signin } from "../../actions/auth";
+import { signup } from "../../actions/auth";
 import { Redirect } from "react-router-dom";
 
-const Signin = ({ isAuthenticated, signin }) => {
-  const [signinFrom, setSigninFrom] = useState({
+const Signup = ({ isAuthenticated, signup }) => {
+  const [signupFrom, setSignupFrom] = useState({
+    name: "",
     email: "",
     password: "",
+    passwordVerify: "",
   });
-  const { email, password } = signinFrom;
+  const { name, email, password, passwordVerify } = signupFrom;
 
   // Function
   const onChange = (e) =>
-    setSigninFrom({ ...signinFrom, [e.target.name]: e.target.value });
+    setSignupFrom({ ...signupFrom, [e.target.name]: e.target.value });
   const onSubmit = async (e) => {
     e.preventDefault();
-    signin({ email, password });
+    if (password !== passwordVerify) {
+      console.log("비밀번호가 일치하지 않음");
+    } else {
+      signup({ name, email, password });
+    }
   };
 
   if (isAuthenticated) {
@@ -26,8 +32,16 @@ const Signin = ({ isAuthenticated, signin }) => {
 
   return (
     <Fragment>
-      <h2>SIGN IN</h2>
+      <h2>SIGN UP</h2>
       <form onSubmit={(e) => onSubmit(e)}>
+        <input
+          name="name"
+          type="text"
+          placeholder="Text"
+          value={name}
+          onChange={(e) => onChange(e)}
+          required
+        />
         <input
           name="email"
           type="text"
@@ -44,19 +58,27 @@ const Signin = ({ isAuthenticated, signin }) => {
           onChange={(e) => onChange(e)}
           required
         />
+        <input
+          name="passwordVerify"
+          type="password"
+          placeholder="Password Verify"
+          value={passwordVerify}
+          onChange={(e) => onChange(e)}
+          required
+        />
         <input type="submit" value="Submit" />
       </form>
     </Fragment>
   );
 };
 
-Signin.propTypes = {
+Signup.propTypes = {
   isAuthenticated: PropTypes.bool,
-  signin: PropTypes.func.isRequired,
+  signup: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(mapStateToProps, { signin })(Signin);
+export default connect(mapStateToProps, { signup })(Signup);
