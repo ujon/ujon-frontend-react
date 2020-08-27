@@ -2,13 +2,9 @@ import React, { useRef } from "react";
 import { useMousePosition } from "../../utils/customHook";
 
 // Style
-import styled, { css } from "styled-components";
-const absouluteCenter = css`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+import styled from "styled-components";
+import { absouluteCenter } from "../../theme/globalMixin";
+
 const CircleContainer = styled.div`
   ${absouluteCenter}
   transform-origin: center center;
@@ -18,17 +14,18 @@ const CircleOutter = styled.div`
   width: 60vh;
   height: 60vh;
   border-radius: 50%;
-  background: #ffffff;
-  box-shadow: inset 5px 0 10px #c9c9c9;
+  background: ${(props) => props.theme.colors.bg};
+  box-shadow: inset 10px 0 20px ${(props) => props.theme.colors.bgShadow};
 `;
 const CircleInner = styled.div`
   ${absouluteCenter}
   width: 30vh;
   height: 30vh;
   border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 5px 0 10px #c9c9c9;
+  background: ${(props) => props.theme.colors.bg};
+  box-shadow: 10px 0 20px ${(props) => props.theme.colors.bgShadow};
 `;
+// Style End
 
 const Circle = () => {
   const position = useMousePosition();

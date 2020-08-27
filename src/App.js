@@ -11,6 +11,10 @@ import { loadUser } from "./actions/auth";
 // Components/pages
 import Home from "./components/pages/Home";
 import Test from "./components/pages/Test";
+// Style
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./theme/globalStyles";
+import { light, dark } from "./theme/theme";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -22,16 +26,19 @@ const App = () => {
   }, []);
 
   return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <Router>
-          <Switch>
-            <Route exact path="/test" component={Test} />
-            <Route path="/" component={Home} />
-          </Switch>
-        </Router>
-      </PersistGate>
-    </Provider>
+    <ThemeProvider theme={light}>
+      <GlobalStyle />
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <Router>
+            <Switch>
+              <Route exact path="/test" component={Test} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </Router>
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
   );
 };
 export default App;

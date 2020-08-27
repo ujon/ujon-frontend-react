@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Signin from "../auth/Signin";
 import Signup from "../auth/Signup";
-import Signout from "../auth/Signout";
 
 const Test = () => {
   return (
