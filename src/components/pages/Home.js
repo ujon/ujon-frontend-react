@@ -6,12 +6,16 @@ import Circle from "../deco/Circle";
 import styled from "styled-components";
 
 const HomeContainer = styled.div`
-  color: ${(props) => (props.active ? "blue" : "yellow")};
+  height: 100vh;
+  overflow: hidden;
+  /* color: ${(props) => (props.active ? "blue" : "yellow")}; */
   background: ${(props) => props.theme.colors.bg};
 `;
-
-const Ab = styled.div`
-  height: 100vh;
+const HomeFooter = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
 `;
 
 const Home = () => {
@@ -22,11 +26,12 @@ const Home = () => {
   };
   return (
     <HomeContainer active={isActive}>
-      <Ab />
       <button onClick={d}>sss</button>
       <h1>Home</h1>
       <Circle />
-      <Link to="/test">test</Link>
+      <HomeFooter>
+        <Link to="/test">test</Link>
+      </HomeFooter>
     </HomeContainer>
   );
 };
