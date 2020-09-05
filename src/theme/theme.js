@@ -1,6 +1,6 @@
 export const light = {
   colors: {
-    bg: "#f5f5f5",
+    bg: "#ebebeb",
     bgShadow: "#bababa",
   },
 };
