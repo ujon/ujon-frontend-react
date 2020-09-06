@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Circle from "../deco/Circle";
+import { CapsuleButton } from "../button/CustomButtons";
 
 // Style
 import styled from "styled-components";
@@ -8,7 +9,6 @@ import styled from "styled-components";
 const HomeContainer = styled.div`
   height: 100vh;
   overflow: hidden;
-  /* color: ${(props) => (props.active ? "blue" : "yellow")}; */
   background: ${(props) => props.theme.colors.bg};
 `;
 const HomeFooter = styled.div`
@@ -19,18 +19,13 @@ const HomeFooter = styled.div`
 `;
 
 const Home = () => {
-  const [isActive, setIsActive] = useState(false);
-  const d = () => {
-    setIsActive(!isActive);
-    console.log(isActive);
-  };
   return (
-    <HomeContainer active={isActive}>
-      <button onClick={d}>sss</button>
-      <h1>Home</h1>
+    <HomeContainer>
       <Circle />
       <HomeFooter>
-        <Link to="/test">test</Link>
+        <CapsuleButton width="150" height="60">
+          MENU
+        </CapsuleButton>
       </HomeFooter>
     </HomeContainer>
   );
