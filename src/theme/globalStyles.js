@@ -7,8 +7,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html, body {
-        overflow: hidden;
+        /* height: 100%;
+        overflow: hidden; */
     }
+
 `;
 
 export default GlobalStyle;
