@@ -50,8 +50,8 @@ const CapsuleButton = (props) => {
 };
 
 CapsuleButton.propTypes = {
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.string,
+  height: PropTypes.string,
   color: PropTypes.string,
   activeColor: PropTypes.string,
   onClick: PropTypes.func,
