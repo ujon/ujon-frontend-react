@@ -9,8 +9,8 @@ const CapsuleButtonContainer = styled.div`
   align-items: center;
   justify-content: center;
   user-select: none;
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   border-radius: 50px;
   box-shadow: ${(props) => {
     if (props.active) {
@@ -57,8 +57,8 @@ CapsuleButton.propTypes = {
   onClick: PropTypes.func,
 };
 CapsuleButton.defaultProps = {
-  width: 100,
-  height: 50,
+  width: "100px",
+  height: "50px",
   onClick: () => {},
 };
 

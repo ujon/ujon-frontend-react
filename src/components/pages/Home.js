@@ -36,8 +36,8 @@ const Home = () => {
           <Circle />
           <HomeFooter>
             <CapsuleButton
-              width="150"
-              height="60"
+              width="150px"
+              height="60px"
               onClick={() => {
                 onClickMenu();
               }}
