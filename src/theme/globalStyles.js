@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
         overflow: hidden; */
     }
 
+    body {
+      overscroll-behavior: none;
+    }
 `;
 
 export default GlobalStyle;
