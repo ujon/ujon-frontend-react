@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 
 // Style
 import styled from "styled-components";
+import { defaultButtonStyle } from "../../theme/globalMixin";
 
 const CapsuleButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
+  ${defaultButtonStyle}
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border-radius: 50px;
