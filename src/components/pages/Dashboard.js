@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { RectangleButton } from "../button/CustomButtons";
 
 // Style
 import styled from "styled-components";
@@ -34,12 +35,13 @@ const DashboardNavBody = styled.div`
 
   & ul {
     list-style: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
+    padding: 0 20px;
   }
   & li {
-    margin: 20px;
+    margin: 20px 0;
+  }
+  & ${RectangleButton.selector} span {
+    margin: 0 0 0 10px;
   }
 `;
 const DashboardNavFooter = styled.div`
@@ -82,7 +84,6 @@ const Dashboard = () => {
   }, [isWide]);
 
   const onClickWide = () => {
-    console.log("s");
     setIsWide(!isWide);
   };
 
@@ -92,8 +93,22 @@ const Dashboard = () => {
         <DashboardNavBody>
           <ul>
             <li>
-              <i className="fas fa-home" />
-              {isWide ? "Home" : ""}
+              <RectangleButton>
+                <i className="fas fa-home" />
+                {isWide ? <span>Home</span> : ""}
+              </RectangleButton>
+            </li>
+            <li>
+              <RectangleButton>
+                <i className="fas fa-home" />
+                {isWide ? <span>Homeasdsadsd</span> : ""}
+              </RectangleButton>
+            </li>
+            <li>
+              <RectangleButton>
+                <i className="fas fa-home" />
+                {isWide ? <span>Homeasdsadsd</span> : ""}
+              </RectangleButton>
             </li>
           </ul>
         </DashboardNavBody>
