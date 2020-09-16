@@ -7,11 +7,13 @@ const palette = {
 [abbreviation]
 bg: Background
 neu: Neumorphic
+dash: Dashboard
 */
 export const light = {
   colors: {
     bg: "#ebebeb",
     bgShadow: "#bababa",
+    bgSecond: "#ededed",
     neuShadowDark: "#c0c0c0",
     neuShadowLight: "#ffffff",
     ...palette,

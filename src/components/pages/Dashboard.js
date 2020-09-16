@@ -21,7 +21,7 @@ const DashboardNav = styled.div`
   box-shadow: ${(props) => {
     return `0px 0px 16px 8px ${props.theme.colors.neuShadowDark}`;
   }};
-  background: #efefef;
+  background: ${(props) => props.theme.colors.bgSecond};
 `;
 const DashboardNavBody = styled.div`
   width: 100%;
@@ -35,7 +35,7 @@ const DashboardNavBody = styled.div`
 
   & ul {
     list-style: none;
-    padding: 0 20px;
+    padding: 0 10px;
   }
   & li {
     margin: 20px 0;
@@ -66,7 +66,7 @@ const Temp = styled.div`
   height: 100px;
   border: 50px;
   box-shadow: 8px 8px 16px #c0c0c0, -8px -8px 16px #ffffff;
-  background: #efefef;
+  background: ${(props) => props.theme.colors.bgSecond};
 `;
 
 const Dashboard = () => {
