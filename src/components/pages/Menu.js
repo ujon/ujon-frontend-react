@@ -60,6 +60,10 @@ const menuLinks = [
     name: "Home",
   },
   {
+    path: "/dashboard",
+    name: "Dashboard",
+  },
+  {
     path: "/test",
     name: "Test",
   },
@@ -71,7 +75,7 @@ const Menu = (props) => {
       <MenuBody>
         <ul>
           {menuLinks.map((link) => (
-            <li>
+            <li key={link.name}>
               <StyledLink to={link.path}>{link.name}</StyledLink>
             </li>
           ))}

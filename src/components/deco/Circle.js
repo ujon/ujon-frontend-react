@@ -3,14 +3,14 @@ import { useMousePosition } from "../../utils/customHook";
 
 // Style
 import styled from "styled-components";
-import { absouluteCenter } from "../../theme/globalMixin";
+import { absoluteCenter } from "../../theme/globalMixin";
 
 const CircleContainer = styled.div`
-  ${absouluteCenter}
+  ${absoluteCenter}
   transform-origin: center center;
 `;
 const CircleOutter = styled.div`
-  ${absouluteCenter}
+  ${absoluteCenter}
   width: 60vh;
   height: 60vh;
   border-radius: 50%;
@@ -18,7 +18,7 @@ const CircleOutter = styled.div`
   box-shadow: inset 10px 0 20px ${(props) => props.theme.colors.bgShadow};
 `;
 const CircleInner = styled.div`
-  ${absouluteCenter}
+  ${absoluteCenter}
   width: 30vh;
   height: 30vh;
   border-radius: 50%;

@@ -1,3 +1,4 @@
 import CapsuleButton from "./CapsuleButton";
+import RectangleButton from "./RectangleButton";
 
-export { CapsuleButton };
+export { CapsuleButton, RectangleButton };

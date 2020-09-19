@@ -10,6 +10,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/auth";
 // Components/pages
 import Home from "./components/pages/Home";
+import Dashboard from "./components/pages/Dashboard";
 import Test from "./components/pages/Test";
 // Style
 import { ThemeProvider } from "styled-components";
@@ -33,6 +34,7 @@ const App = () => {
           <Router>
             <Switch>
               <Route exact path="/test" component={Test} />
+              <Route path="/dashboard" component={Dashboard} />
               <Route path="/" component={Home} />
             </Switch>
           </Router>

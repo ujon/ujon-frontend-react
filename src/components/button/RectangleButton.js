@@ -5,16 +5,14 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { defaultButtonStyle } from "../../theme/globalMixin";
 
-const CapsuleButtonContainer = styled.div`
-  ${defaultButtonStyle}
+const RectangleButtonContainer = styled.div`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  border-radius: 50px;
+  border-radius: ${(props) => props.borderRadius};
+  padding: ${(props) => props.padding};
   box-shadow: ${(props) => {
     if (props.active) {
       return "inset 0 8px 16px #c0c0c0, inset 0 -8px 16px #ffffff";
-    } else {
-      return "0 8px 16px #c0c0c0, 0 -8px 16px #ffffff";
     }
   }};
   color: ${(props) => {
@@ -24,17 +22,18 @@ const CapsuleButtonContainer = styled.div`
   }};
 `;
 
-const CapsuleButton = (props) => {
+const RectangleButton = (props) => {
   const [isActive, setIsActive] = useState(false);
   const onClick = () => {
     setIsActive(!isActive);
   };
 
   return (
-    <CapsuleButtonContainer
+    <RectangleButtonContainer
       width={props.width}
       height={props.height}
-      color={props.color}
+      borderRadius={props.borderRadius}
+      padding={props.padding}
       activeColor={props.activeColor}
       active={isActive}
       onClick={() => {
@@ -43,21 +42,21 @@ const CapsuleButton = (props) => {
       }}
     >
       {props.children}
-    </CapsuleButtonContainer>
+    </RectangleButtonContainer>
   );
 };
-
-CapsuleButton.propTypes = {
+RectangleButton.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
+  borderRadius: PropTypes.string,
+  padding: PropTypes.string,
   color: PropTypes.string,
   activeColor: PropTypes.string,
-  onClick: PropTypes.func,
 };
-CapsuleButton.defaultProps = {
-  width: "100px",
-  height: "50px",
+RectangleButton.defaultProps = {
+  borderRadius: "15px",
+  padding: "20px",
   onClick: () => {},
 };
 
-export default CapsuleButton;
+export default RectangleButton;
